@@ -22,7 +22,7 @@
                         ?>
                     </a> 
 
-                    <h5><a href=" <?php the_permalink() ?> "> <?php the_title( ) ?> </a> </h5>
+                    <h5> <a href=" <?php the_permalink() ?> "> <?php the_title( ) ?> </a> </h5> 
                     <p>
                         <?php
                             $excerpt = get_the_excerpt(); 

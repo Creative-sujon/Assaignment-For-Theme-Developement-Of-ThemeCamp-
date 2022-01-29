@@ -21,15 +21,7 @@
 </head>
 
 <body <?php body_class() ?>>
-
-    <header>
-
-        <!-- Navigation-->
-        <?php get_template_part('/template-parts/nav-menu') ?>
-        <!--/-->
-
-    </header>
-
-
+    <?php wp_body_open() ?>
 
     
+    <?php get_template_part('/template-parts/nav-menu') ?>   

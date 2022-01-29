@@ -18,13 +18,16 @@ get_header();
 
 
 
+
     <!--Post-Content-->
     <?php get_template_part('/template-parts/post-content') ?>
     <!--/-->
-
 
 
     <?php
         get_sidebar();
         get_footer();
     ?>
+
+
+

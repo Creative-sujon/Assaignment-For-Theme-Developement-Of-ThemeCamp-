@@ -31,13 +31,12 @@ get_header();
                                 allowfullscreen="">
                             </iframe>
                         </div>
-                        <form action="https://noonpost.netlify.app/html/template/assets/php/mail.php" class="widget-form contact_form " method="POST" id="main_contact_form">
-                            <h6> <?php esc_html_e( 'Feel free to contact any time.', 'js-bangladesh' ) ?> </h6>
-                            <p> <?php esc_html_e( 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, repudiandae.', 'js-bangladesh' ) ?> </p>
-                            <div class="alert alert-success contact_msg" style="display: none" role="alert">
-                                <?php esc_html_e( 'Your message was sent successfully.', 'js-bangladesh' ) ?>
-                            </div>
-                        </form>
+                        
+                        <div>
+                            <h6 class="mb-3"> <?php esc_html_e( 'Feel free to contact any time.', 'js-bangladesh' ) ?> </h6>
+                            
+                            <div class="alert alert-success contact_msg" style="display: none" role="alert"> <?php esc_html_e( 'Your message was sent successfully.', 'js-bangladesh' ) ?> </div>
+                        </div>
 
                         <?php echo do_shortcode( '[contact-form-7 id="162" title="Untitled"]' ); ?>
 

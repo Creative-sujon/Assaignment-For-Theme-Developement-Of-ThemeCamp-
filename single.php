@@ -10,12 +10,13 @@
 get_header();
 ?>
 
-<div class="container">
-    <div class="row">
 
-        <div class="col-lg-8 mt-5"> 
-
-            <!-- Single Content Area -->
+    <!--post-default-->
+    <section class="section pt-55 ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 mb-20">
+                    <!-- Single Content Area -->
             <div class="post-single">
                 <div class="post-single-image">
                     <?php  
@@ -69,58 +70,64 @@ get_header();
     
 
 
-            <div class="row">
+                    <div class="row">
+                        <?php
+                            $prevPost= get_previous_post();
+                            if(is_a($prevPost, 'WP_Post')):
+                        ?>
                         <div class="col-md-6">
                             <div class="widget">
                                 <div class="widget-next-post">
                                     <div class="small-post">
+                                        
                                         <div class="image">
-                                            
-                                            <?php $prevPost = get_previous_post(true);
-                                                if($prevPost) {
-                                                    $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) ); 
-                                                } 
-                                                previous_post_link('%link',"$prevthumbnail", TRUE); 
-                                            ?>
+										    <a href="<?php echo get_permalink($prevPost->ID); ?>">
+											    <!-- <img src="assets/img/latest/1.jpg" alt="..."> -->
+											    <?php echo get_the_post_thumbnail($prevPost->ID); ?>
+										    </a>
+									    </div>
 
-                                        </div>
                                         <div class="content">
                                             <div>
-                                                <a class="link" href="post-default.html"><i class="arrow_left"></i>Preview post</a>
+                                                <a class="link" href=" <?php echo get_permalink($prevPost->ID); ?> ">
+                                                <i class="arrow_left"></i>Preview post</a>
                                             </div>
-                                            <a href="post-default.html"> <?php previous_post_link( ) ?> </a>
+                                            <a href="<?php echo get_permalink($prevPost->ID); ?>"><?php echo get_the_title($prevPost->ID); ?></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+    
+
                         <div class="col-md-6">
                             <div class="widget">
                                 <div class="widget-previous-post">
                                     <div class="small-post">
-                                        <div class="image">
 
-                                                    <?php $nextPost = get_next_post(true);
-                                                        if (isset($nextPost))  {
-                                                            $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(100,100) ); 
-                                                        } 
-                                                        next_post_link('%link',"$nextthumbnail", TRUE);
-                                                    ?>                   
-                                            
+                                        <div class="image">
+                                            <a href="<?php echo get_permalink($nextPost->ID); ?>">
+                                                <?php echo get_the_post_thumbnail($nextPost->ID); ?>
+                                            </a>
                                         </div>
+
                                         <div class="content">
                                             <div>
-                                                <a class="link" href="  ">
+                                                <a class="link" href=" <?php echo get_permalink($nextPost->ID); ?> ">
                                                     <span> Next post</span>
                                                     <span class="arrow_right"></span>
                                                 </a>
                                             </div>
-                                            <a href=""> <?php next_post_link( ); ?> </a>
+                                            <a href=" <?php echo get_permalink($nextPost->ID); ?> "><?php echo get_the_title($nextPost->ID); ?></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
+                        <?php
+						endif; ?>
             </div>
 
 
@@ -128,20 +135,16 @@ get_header();
          <div>
             <?php comments_template(); ?> 
          </div>
+                </div>
 
 
-
+                <div class="col-lg-4 max-width">
+                    <?php get_template_part('sidebar') ?>
+                    <!--/-->
+                </div> 
+            </div>
         </div>
-
-
-        <!-- Sidebar -->
-         <div class="col-lg-4 mt-5">
-            <?php get_template_part('sidebar') ?>
-        </div>
-
-        
-    </div>
-                     
+    </section><!--/-->
         
 
 
@@ -150,6 +153,16 @@ get_header();
 <?php 
     get_footer();
 ?>
+
+
+
+
+
+
+
+
+
+
 
 
 

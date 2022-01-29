@@ -57,7 +57,6 @@ body {
   background-color: #F9F9FF;
   color: #506172;
   font-weight: 400;
-  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -895,6 +894,10 @@ input:checked + .slider:before {
 /* -----------------------------------
 		Navigation
 ----------------------------------- */
+.logged-in.admin-bar .fixed-top{
+    top: 30px;
+}
+
 .navbar {
   background-color: #ffffff;
   padding: 15px 15px;
@@ -1476,7 +1479,7 @@ a.comment-reply-link {
 
 .comment-form-author input#author, .comment-form-email input#email, .comment-form-url input#url {
     width: 100%;
-    display: block;
+    display: block; 
     height: auto;
     font-size: 1rem;
     font-weight: 400;

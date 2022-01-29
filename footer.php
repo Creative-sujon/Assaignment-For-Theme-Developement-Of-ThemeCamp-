@@ -78,17 +78,19 @@
                 <button type="button" class="close">
                     <i class="icon_close"></i>
                 </button>
-                <form class="search-form" action="#">
-                    <input type="search" value="" placeholder="What are you looking for?">
-                    <button type="submit" class="search-btn">search</button>
+                
+                <form class="search-form" method="get" action="<?php echo home_url( '/' ); ?>">
+                    <input type="search" value="" placeholder="<?php printf(esc_html__('What are you looking for?', 'js-bangladesh')); ?>" name="s">
+				    <button type="submit" class="search-btn"><?php printf(esc_html__('search', 'js-bangladesh')); ?></button>
                 </form>
+
             </div>
         </div>
     </div>
     <!--/-->
 
-
     <?php wp_footer() ?>
+
 
 </body>
 </html>
